@@ -6,11 +6,14 @@ import icon from "./Icon";
 const Icon = icon( Icons );
 
 const FaIcon = props => {
-    return ( <Icon name={ `Fa${ props.name }` }/> );
+    return ( <Icon {...props}/> );
 };
 
 FaIcon.propTypes = {
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
+    size: PropTypes.string,
+    color: PropTypes.string,
+    className: PropTypes.string,
 };
 
 export default FaIcon;

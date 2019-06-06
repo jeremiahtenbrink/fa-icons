@@ -6,7 +6,7 @@ import icon from "./Icon";
 const Icon = icon( Icons );
 
 const FeatherIcon = props => {
-    return ( <Icon name={ `Fi${ props.name }` }/> );
+    return ( <Icon { ...props } /> );
 };
 
 FeatherIcon.propTypes = {
