@@ -54,6 +54,7 @@ const iconSet = Icon => {
                     title={ `Name: ${ this.state.iconName }` }
                     visible={ this.state.modalOpen }
                     onOk={ this.closeModal }
+                    onCancel={ this.closeModal }
                 >
                     <code>
                         import { `{${ this.state.iconName }}` } from { packageName };
