@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import FaIcon from "./FaIcon";
 import { Modal } from "antd";
+import {iconDetails} from '../iconDetails'
 
 const iconSet = Icon => {
     return class IconSet extends Component{
@@ -10,7 +11,6 @@ const iconSet = Icon => {
         };
         
         toggleOpen = () => {
-            debugger;
             this.setState( state => ( { open: !state.open } ) );
         };
         
@@ -23,11 +23,9 @@ const iconSet = Icon => {
         };
         
         render(){
-            let packageName = "";
-            if( this.props.name === "Font Awesome" ){
-                packageName = "'react-icons/fa'";
-            }
-            return ( <div>
+            let packageName = iconDetails.filter(iconObj => iconObj.name === this.props.name)[0].packageName;
+            return ( 
+            <div>
                 <div className={ "inline" }>
                     { this.state.open && <FaIcon name={ "FaAngleDown" }
                                                  onClick={ this.toggleOpen }/> }
@@ -36,9 +34,7 @@ const iconSet = Icon => {
                     <h1>{ this.props.name }</h1>
                 </div>
                 
-                <div className={ "fa_icons" }>
-                    
-                    
+                <div className={ "icon-set" }>
                     { this.state.open &&
                     this.props.iconNames.filter( name => name.toLowerCase()
                         .includes( this.props.searchTerm.toLowerCase() ) )
