@@ -8,8 +8,9 @@ const icon = ( type ) => {
         };
         
         componentDidMount(){
+            debugger;
             try{
-                const icon = type[ this.props.name ]( this.props );
+                const icon = type[ this.props.name ]();
                 this.setState( { icon } );
             }catch( e ){
                 console.log( e );
@@ -17,8 +18,8 @@ const icon = ( type ) => {
         }
         
         render(){
-            return ( 
-            <IconContext.Provider
+            debugger;
+            return ( <IconContext.Provider
                 value={ {
                     color: `${ this.props.color || "#292938" }`,
                     className: `${ this.props.className || "global-icon" }`,

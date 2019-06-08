@@ -8,72 +8,72 @@ import * as MDIcons from "react-icons/md";
 import * as TypIcons from "react-icons/ti";
 import * as WeatherIcons from "react-icons/wi";
 
-const iconDetails = [
-    {
+const iconDetails = {
+    Di: {
         stateName: "diNames",
         name: "Devicons",
         import: DevIcons,
-        packageName: "react-icons/di" 
+        packageName: "react-icons/di"
     },
-
-    {
+    
+    Fa: {
         stateName: "faNames",
         name: "Font Awesome",
         import: FaIcons,
-        packageName: "react-icons/fa" 
+        packageName: "react-icons/fa"
     },
-
-    {
+    
+    Fi: {
         stateName: "fiNames",
         name: "Feather Icons",
         import: FeatherIcons,
-        packageName: "react-icons/fi" 
+        packageName: "react-icons/fi"
     },
-    {
+    
+    Gi: {
         stateName: "giNames",
         name: "Game Icons",
         import: GameIcons,
-        packageName: "react-icons/gi" 
+        packageName: "react-icons/gi"
     },
-    {
+    
+    Go: {
         stateName: "goNames",
         name: "Github Icons",
         import: GithubIcons,
-        packageName: "react-icons/go" 
+        packageName: "react-icons/go"
     },
-
-    {
+    
+    Io: {
         stateName: "ioNames",
         name: "Ionicons",
         import: IonIcons,
-        packageName: "react-icons/io" 
+        packageName: "react-icons/io"
     },
-
-    {
+    
+    Md: {
         stateName: "mdIcons",
         name: "Material Design Icons",
         import: MDIcons,
-        packageName: "react-icons/md" 
+        packageName: "react-icons/md"
     },
-
-    {
+    
+    Ti: {
         stateName: "tiNames",
         name: "Typicons",
         import: TypIcons,
-        packageName: "react-icons/ti" 
+        packageName: "react-icons/ti"
     },
-
-    {
+    
+    Wi: {
         stateName: "wiNames",
         name: "Weather Icons",
         import: WeatherIcons,
-        packageName: "react-icons/wi" 
+        packageName: "react-icons/wi"
     }
+    
+};
 
-]
-
-
-
-export {iconDetails};
+export { iconDetails };
 
 
