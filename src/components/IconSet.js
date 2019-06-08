@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import FaIcon from "./FaIcon";
+import {FaAngleDown, FaAngleRight} from 'react-icons/fa'
 import { Modal } from "antd";
 import {iconDetails} from '../iconDetails'
 
@@ -27,15 +26,13 @@ const iconSet = Icon => {
             return ( 
             <div>
                 <div className={ "inline" }>
-                    { this.state.open && <FaIcon name={ "FaAngleDown" }
-                                                 onClick={ this.toggleOpen }/> }
-                    { !this.state.open && <FaIcon name={ "FaAngleRight" }
-                                                  onClick={ this.toggleOpen }/> }
+                    { this.state.open && <FaAngleDown className="icon-arrow"onClick={ this.toggleOpen }/>}
+                    { !this.state.open && <FaAngleRight className = "icon-arrow" onClick={ this.toggleOpen }/> }
                     <h1>{ this.props.name }</h1>
                 </div>
                 
                 <div className={ "icon-set" }>
-                    { this.state.open &&
+                    { this.state.open && 
                     this.props.iconNames.filter( name => name.toLowerCase()
                         .includes( this.props.searchTerm.toLowerCase() ) )
                         .map( iconName => (
@@ -57,9 +54,10 @@ const iconSet = Icon => {
                         <br/>
                         <br/>
                         
-                        return( { `<${ this.state.iconName } value=\"{{  color: \"#292938\",
-                    className: \"global-icon\" },
-                    size: \"44px\" }}" />` } )
+                        return( 
+                        { `<${ this.state.iconName } value="{{  color: "#292938",
+                            className: "global-icon",
+                            size: "44px" }}" />` } )
                     </code>
                 </Modal>
             </div> );

@@ -1,29 +1,24 @@
 import React, { Component } from "react";
 import { Form, Input } from "antd";
-import "./display.scss";
 import iconSet from "../components/IconSet";
+import icon from '../components/Icon'
 import {iconDetails} from '../iconDetails';
+import "./display.scss";
 
 class Display extends Component{
     state = {
         searchTerm: "", 
-        diNames: [], 
-        faNames: [], 
-        fiNames: [], 
-        giNames: [],
-        goNames: [],
-        ioNames: [],
-        mdNames: [],
-        tiNames: [],
-        wiNames: [],
     };
-    
+
     componentDidMount(){
         let iconNames = {}
         iconDetails.forEach(iconObj => {
-            iconNames[iconObj.stateName] = Object.keys(iconObj.import)
+            iconNames[iconObj.stateName] = Object.keys(iconObj.import);
+            // generate empty array per statename
+            this.setState({
+                [iconObj.stateName]: []
+            })
         })
-        
         this.setState({...iconNames});
     }
     
@@ -41,9 +36,9 @@ class Display extends Component{
                     </Form.Item>
                 </Form>
             {iconDetails.map(iconObj => {
-                const ComponentFromIconSet = iconSet(iconObj.setFile)
+                const ComponentFromIconSet = iconSet(icon(iconObj.import))
                 return(
-                    <div className = "icon-section" key = {iconObj.key}>
+                    <div className = "icon-section" key = {iconObj.stateName}>
                         <ComponentFromIconSet
                             iconNames = {this.state[iconObj.stateName]}
                             name = {iconObj.name}
